@@ -1,4 +1,4 @@
-﻿using Loom.Models;
+using Loom.Models;
 
 namespace Loom.Models.Nodes;
 
@@ -30,7 +30,7 @@ public class LogicNode : Node
         Label = $"Logic [{predicate}]";
     }
 
-    public override Task<object?> Execute(WorkflowExecutionContext ctx)
+    public override Task<object?> Execute(WorkflowExecutionContext ctx, CancellationToken cancellationToken = default)
     {
         object? a = GetInputPort("A")?.GetValue();
         object? b = GetInputPort("B")?.GetValue();
