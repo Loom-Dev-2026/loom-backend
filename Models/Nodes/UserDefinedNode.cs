@@ -1,4 +1,4 @@
-﻿using Loom.Models;
+using Loom.Models;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
 using Microsoft.CodeAnalysis.Scripting;
 
@@ -45,7 +45,7 @@ public class UserDefinedNode : Node
         AddOutputPort("Output", "object");
     }
 
-    public override async Task<object?> Execute(WorkflowExecutionContext ctx)
+    public override async Task<object?> Execute(WorkflowExecutionContext ctx, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(ScriptCode))
         {
