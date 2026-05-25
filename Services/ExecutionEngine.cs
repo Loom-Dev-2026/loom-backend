@@ -1,6 +1,5 @@
-﻿using Loom.Models;
+using Loom.Models;
 using Loom.Models.Nodes;
-using Microsoft.AspNetCore.Identity;
 using System.Diagnostics;
 
 namespace Loom.Services;
@@ -27,9 +26,12 @@ public class ExecutionEngine
     // ── Main entry point ─────────────────────────────────────────────────────
 
     /// <summary>
-    /// Runs the full workflow.  Returns the completed (or failed) context.
+    /// Runs the full workflow. Returns the completed (or failed) context.
+    /// Pass a <paramref name="cancellationToken"/> to allow the caller to abort mid-run.
     /// </summary>
-    public async Task<WorkflowExecutionContext> RunAsync(Workflow workflow)
+    public async Task<WorkflowExecutionContext> RunAsync(
+        Workflow workflow,
+        CancellationToken cancellationToken = default)
     {
         var ctx = workflow.CreateExecutionContext();
         ctx.Status = ExecStatus.Running;
@@ -60,6 +62,9 @@ public class ExecutionEngine
         // 3. Execute each node in order
         foreach (var node in ordered)
         {
+            // Respect cancellation between nodes (not in the middle of one)
+            cancellationToken.ThrowIfCancellationRequested();
+
             if (!node.IsEnabled)
             {
                 node.MarkSkipped();
@@ -87,13 +92,27 @@ public class ExecutionEngine
             var sw = Stopwatch.StartNew();
             try
             {
-                var output = await node.Execute(ctx);
+                var output = await node.Execute(ctx, cancellationToken);
                 sw.Stop();
                 node.MarkSuccess();
 
                 var result = ExecutionResult.CreateSuccess(
                     node.NodeId, ctx.ExecutionId, output, sw.ElapsedMilliseconds);
                 ctx.AddResult(result);
+            }
+            catch (OperationCanceledException)
+            {
+                sw.Stop();
+                node.MarkError();
+                ctx.Fail();
+
+                var result = ExecutionResult.CreateError(
+                    node.NodeId, ctx.ExecutionId,
+                    "Execution was cancelled by the caller.");
+                ctx.AddResult(result);
+
+                // Re-throw so the caller knows the run was cancelled
+                throw;
             }
             catch (Exception ex)
             {
@@ -108,8 +127,9 @@ public class ExecutionEngine
             }
         }
 
-        // 4. Finalise
-        ctx.Complete();
+        // 4. Finalise — only mark complete if not already failed/cancelled
+        if (ctx.Status == ExecStatus.Running)
+            ctx.Complete();
 
         // 5. Persist the run (best-effort)
         try { await _storage.SaveExecutionAsync(workflow, ctx); }
@@ -120,22 +140,21 @@ public class ExecutionEngine
 
     // ── Propagate values from upstream output ports into this node's inputs ──
 
-    private static void PropagateInputs(Workflow workflow, Node node,
+    private static void PropagateInputs(
+        Workflow workflow,
+        Node node,
         WorkflowExecutionContext ctx)
     {
         foreach (var conn in workflow.Connections
                      .Where(c => c.TargetNodeId == node.NodeId))
         {
-            // Find the source node
             var srcNode = workflow.Nodes.FirstOrDefault(n => n.NodeId == conn.SourceNodeId);
             if (srcNode is null) continue;
 
-            // Find source output port
             var srcPort = srcNode.OutputPorts
                 .FirstOrDefault(p => p.PortId == conn.SourcePortId);
             if (srcPort is null) continue;
 
-            // Find target input port
             var tgtPort = node.InputPorts
                 .FirstOrDefault(p => p.PortId == conn.TargetPortId);
             if (tgtPort is null) continue;
