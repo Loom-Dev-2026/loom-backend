@@ -1,4 +1,4 @@
-﻿namespace Loom.Models;
+namespace Loom.Models;
 
 public enum NodeType
 {
@@ -7,7 +7,9 @@ public enum NodeType
     Arithmetic,
     Logic,
     UserDefined,
-    Api
+    Api,
+    Weather,   // WeatherNode — Open-Meteo
+    Stripe,    // StripeNode  — test mode only
 }
 
 public enum PortDirection
