@@ -1,4 +1,5 @@
-﻿using Loom.Models;
+using Loom.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Loom.Models.Nodes;
 
@@ -19,8 +20,13 @@ public abstract class Node
 
     // ── Abstract contract ────────────────────────────────────────────────────
 
-    /// <summary>Executes the node's logic using the shared execution context.</summary>
-    public abstract Task<object?> Execute(WorkflowExecutionContext ctx);
+    /// <summary>
+    /// Executes the node's logic using the shared execution context.
+    /// Implementations should respect the cancellation token for long-running operations.
+    /// </summary>
+    public abstract Task<object?> Execute(
+        WorkflowExecutionContext ctx,
+        CancellationToken cancellationToken = default);
 
     /// <summary>Returns true if the node's current configuration is valid.</summary>
     public abstract bool Validate();
@@ -58,4 +64,24 @@ public abstract class Node
     public void MarkSuccess() => ExecutionState = ExecState.Success;
     public void MarkError() => ExecutionState = ExecState.Error;
     public void MarkSkipped() => ExecutionState = ExecState.Skipped;
+
+    // ── Utility helpers ──────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Safely reads a typed value from an input port, returning the default if
+    /// the port is missing or the value cannot be cast.
+    /// </summary>
+    protected T? GetInputValue<T>(string portName)
+    {
+        var raw = GetInputPort(portName)?.GetValue();
+        if (raw is null) return default;
+        if (raw is T typed) return typed;
+
+        try { return (T)Convert.ChangeType(raw, typeof(T)); }
+        catch { return default; }
+    }
+
+    /// <summary>Writes a value to a named output port (no-op if port not found).</summary>
+    protected void SetOutputValue(string portName, object? value)
+        => GetOutputPort(portName)?.SetValue(value);
 }
