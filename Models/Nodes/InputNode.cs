@@ -1,4 +1,4 @@
-﻿using Loom.Models;
+using Loom.Models;
 
 namespace Loom.Models.Nodes;
 
@@ -25,7 +25,7 @@ public class InputNode : Node
         UserInput = value;
     }
 
-    public override Task<object?> Execute(WorkflowExecutionContext ctx)
+    public override Task<object?> Execute(WorkflowExecutionContext ctx, CancellationToken cancellationToken = default)
     {
         _lastOutput = UserInput;
         GetOutputPort("Value")?.SetValue(_lastOutput);
