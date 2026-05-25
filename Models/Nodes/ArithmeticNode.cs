@@ -1,4 +1,4 @@
-﻿using Loom.Models;
+using Loom.Models;
 
 namespace Loom.Models.Nodes;
 
@@ -26,7 +26,7 @@ public class ArithmeticNode : Node
         Label = op.ToString();
     }
 
-    public override Task<object?> Execute(WorkflowExecutionContext ctx)
+    public override Task<object?> Execute(WorkflowExecutionContext ctx, CancellationToken cancellationToken = default)
     {
         double a = ToDouble(GetInputPort("A")?.GetValue());
         double b = ToDouble(GetInputPort("B")?.GetValue());
