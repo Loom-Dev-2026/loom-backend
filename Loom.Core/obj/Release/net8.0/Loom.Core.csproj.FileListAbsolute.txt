@@ -1,0 +1,40 @@
+C:\Users\sabika sajid\Downloads\Loom Frontend\Loom backend\Loom.Core\bin\Release\net8.0\Loom.Core.deps.json
+C:\Users\sabika sajid\Downloads\Loom Frontend\Loom backend\Loom.Core\bin\Release\net8.0\Loom.Core.dll
+C:\Users\sabika sajid\Downloads\Loom Frontend\Loom backend\Loom.Core\bin\Release\net8.0\Loom.Core.pdb
+C:\Users\sabika sajid\Downloads\Loom Frontend\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.csproj.AssemblyReference.cache
+C:\Users\sabika sajid\Downloads\Loom Frontend\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sabika sajid\Downloads\Loom Frontend\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.AssemblyInfoInputs.cache
+C:\Users\sabika sajid\Downloads\Loom Frontend\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.AssemblyInfo.cs
+C:\Users\sabika sajid\Downloads\Loom Frontend\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.csproj.CoreCompileInputs.cache
+C:\Users\sabika sajid\Downloads\Loom Frontend\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.dll
+C:\Users\sabika sajid\Downloads\Loom Frontend\Loom backend\Loom.Core\obj\Release\net8.0\refint\Loom.Core.dll
+C:\Users\sabika sajid\Downloads\Loom Frontend\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.pdb
+C:\Users\sabika sajid\Downloads\Loom Frontend\Loom backend\Loom.Core\obj\Release\net8.0\ref\Loom.Core.dll
+C:\Users\Ali\Desktop\LOOM proj\LOOM proj\Loom backend\Loom.Core\bin\Release\net8.0\Loom.Core.deps.json
+C:\Users\Ali\Desktop\LOOM proj\LOOM proj\Loom backend\Loom.Core\bin\Release\net8.0\Loom.Core.dll
+C:\Users\Ali\Desktop\LOOM proj\LOOM proj\Loom backend\Loom.Core\bin\Release\net8.0\Loom.Core.pdb
+C:\Users\Ali\Desktop\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.csproj.AssemblyReference.cache
+C:\Users\Ali\Desktop\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ali\Desktop\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.AssemblyInfoInputs.cache
+C:\Users\Ali\Desktop\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.AssemblyInfo.cs
+C:\Users\Ali\Desktop\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.csproj.CoreCompileInputs.cache
+C:\Users\Ali\Desktop\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.dll
+C:\Users\Ali\Desktop\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\refint\Loom.Core.dll
+C:\Users\Ali\Desktop\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.pdb
+C:\Users\Ali\Desktop\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\ref\Loom.Core.dll
+C:\Users\Ali\Desktop\LOOM proj\LOOM proj\Loom backend\Loom.Core\bin\Release\net8.0\Loom.Core.runtimeconfig.json
+C:\Users\Ali\Desktop\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.genruntimeconfig.cache
+C:\Users\Ali\Desktop\LOOM proj 2\LOOM proj\LOOM proj\Loom backend\Loom.Core\bin\Release\net8.0\Loom.Core.deps.json
+C:\Users\Ali\Desktop\LOOM proj 2\LOOM proj\LOOM proj\Loom backend\Loom.Core\bin\Release\net8.0\Loom.Core.runtimeconfig.json
+C:\Users\Ali\Desktop\LOOM proj 2\LOOM proj\LOOM proj\Loom backend\Loom.Core\bin\Release\net8.0\Loom.Core.dll
+C:\Users\Ali\Desktop\LOOM proj 2\LOOM proj\LOOM proj\Loom backend\Loom.Core\bin\Release\net8.0\Loom.Core.pdb
+C:\Users\Ali\Desktop\LOOM proj 2\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.csproj.AssemblyReference.cache
+C:\Users\Ali\Desktop\LOOM proj 2\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ali\Desktop\LOOM proj 2\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.AssemblyInfoInputs.cache
+C:\Users\Ali\Desktop\LOOM proj 2\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.AssemblyInfo.cs
+C:\Users\Ali\Desktop\LOOM proj 2\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.csproj.CoreCompileInputs.cache
+C:\Users\Ali\Desktop\LOOM proj 2\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.dll
+C:\Users\Ali\Desktop\LOOM proj 2\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\refint\Loom.Core.dll
+C:\Users\Ali\Desktop\LOOM proj 2\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.pdb
+C:\Users\Ali\Desktop\LOOM proj 2\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\Loom.Core.genruntimeconfig.cache
+C:\Users\Ali\Desktop\LOOM proj 2\LOOM proj\LOOM proj\Loom backend\Loom.Core\obj\Release\net8.0\ref\Loom.Core.dll
